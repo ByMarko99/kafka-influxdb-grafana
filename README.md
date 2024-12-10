@@ -93,6 +93,20 @@ python producer.py
 python consumer.py
 ```
 
+### 7. Example Grafana Dashboard
+<img src="img/demo.png">
+
+```bash
+from(bucket: "sensor_data")
+  |> range(start: -1h)
+  |> filter(fn: (r) => r["_measurement"] == "environment" and r["_field"] == "temperature")
+```
+
+```bash
+from(bucket: "sensor_data")
+  |> range(start: -1h)
+  |> filter(fn: (r) => r["_measurement"] == "environment" and r["_field"] == "humidity")
+```
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
