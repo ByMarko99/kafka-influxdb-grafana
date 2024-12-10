@@ -28,7 +28,7 @@ git clone https://github.com/yourusername/kafka-influxdb-grafana.git
 cd kafka-influxdb-grafana
 ```
 
-**IMPORTANT: change the token and respective IP's for producer and consumer once you setup influxdb and your bucket (http://localhost:8086)**
+**IMPORTANT: change the token and respective IP's (localhost or host) for producer, consumer and yml once you setup influxdb and your bucket (http://localhost:8086)**
 
 ### 2. Set Up Docker Compose
 
