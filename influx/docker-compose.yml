@@ -1,0 +1,26 @@
+version: '3.8'
+services:
+
+  influxdb:
+    image: influxdb:latest
+    ports:
+      - "8086:8086"
+    environment:
+      INFLUXDB_DB: sensor_data
+      INFLUXDB_ADMIN_USER: admin
+      INFLUXDB_ADMIN_PASSWORD: admin1234
+    volumes:
+      - influxdb_data:/var/lib/influxdb  # Persist InfluxDB data
+
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3000:3000"
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: admin
+    volumes:
+      - grafana_data:/var/lib/grafana  # Persist Grafana data (dashboards and settings)
+
+volumes:
+  influxdb_data:  # Define volume for InfluxDB data persistence
+  grafana_data:  # Define volume for Grafana data persistence
