@@ -107,6 +107,9 @@ from(bucket: "sensor_data")
   |> range(start: -1h)
   |> filter(fn: (r) => r["_measurement"] == "environment" and r["_field"] == "humidity")
 ```
+
+[![View Document](https://img.shields.io/badge/Google%20Doc-View-blue?style=for-the-badge)](https://docs.google.com/document/d/1yH-75rv-ZHNimhJbPTs4FHzY_UjTt-3nkvi3upWGZsE/edit?usp=sharing)
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
