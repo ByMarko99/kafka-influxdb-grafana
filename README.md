@@ -28,7 +28,7 @@ git clone https://github.com/yourusername/kafka-influxdb-grafana.git
 cd kafka-influxdb-grafana
 ```
 
-**IMPORTANT: change the token and respective IP's for producer and consumer once you setup influxdb and your bucket (http://localhost:8086)**
+**IMPORTANT: change the token and respective IP's (localhost or host) for producer, consumer and yml once you setup influxdb and your bucket (http://localhost:8086)**
 
 ### 2. Set Up Docker Compose
 
@@ -107,6 +107,9 @@ from(bucket: "sensor_data")
   |> range(start: -1h)
   |> filter(fn: (r) => r["_measurement"] == "environment" and r["_field"] == "humidity")
 ```
+
+[![View Document](https://img.shields.io/badge/Google%20Doc-View-blue?style=for-the-badge)](https://docs.google.com/document/d/1yH-75rv-ZHNimhJbPTs4FHzY_UjTt-3nkvi3upWGZsE/edit?usp=sharing)
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
